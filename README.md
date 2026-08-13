@@ -1,12 +1,12 @@
-# BarLLM
+# TokenGauge
 
-![BarLLM Logo](src-tauri/icons/icon.png)
+![TokenGauge Logo](src-tauri/icons/icon.png)
 
-[![CI](https://github.com/Martinnezsavemaiwai/BarLLM/actions/workflows/ci.yml/badge.svg)](https://github.com/Martinnezsavemaiwai/BarLLM/actions/workflows/ci.yml)
+[![CI](https://github.com/Martinnezsavemaiwai/TokenGauge/actions/workflows/ci.yml/badge.svg)](https://github.com/Martinnezsavemaiwai/TokenGauge/actions/workflows/ci.yml)
 
 > Windows Taskbar Companion for AI Coding Assistants. Your AI coding usage, always one glance away.
 
-BarLLM is a native-feeling Windows 11 system tray companion designed to help you monitor your usage for AI coding assistants (e.g. Claude Code, Codex, Aider) directly from the taskbar, without opening settings or web dashboards.
+TokenGauge is a native-feeling Windows 11 system tray companion designed to help you monitor your usage for AI coding assistants (e.g. Claude Code, Codex, Aider) directly from the taskbar, without opening settings or web dashboards.
 
 ## Features
 
@@ -19,7 +19,7 @@ BarLLM is a native-feeling Windows 11 system tray companion designed to help you
 
 ## Installation
 
-Download the latest installer from the [Releases](https://github.com/Martinnezsavemaiwai/BarLLM/releases) page, or build from source below.
+Download the latest installer from the [Releases](https://github.com/Martinnezsavemaiwai/TokenGauge/releases) page, or build from source below.
 
 > The installer isn't code-signed yet, so Windows SmartScreen may warn on first run ("Windows protected your PC" → More info → Run anyway).
 
@@ -34,8 +34,8 @@ Download the latest installer from the [Releases](https://github.com/Martinnezsa
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Martinnezsavemaiwai/BarLLM.git
-   cd BarLLM
+   git clone https://github.com/Martinnezsavemaiwai/TokenGauge.git
+   cd TokenGauge
    ```
 
 2. Install dependencies:
@@ -55,11 +55,11 @@ Download the latest installer from the [Releases](https://github.com/Martinnezsa
 
 ## Development
 
-BarLLM comes with a built-in "Dev Mode" layout that lets you manually simulate usage thresholds (0% to 100%) to see how the UI reacts. Run `npm run dev` to see the web UI, or `npm run tauri dev` to test the full Windows tray integration.
+TokenGauge comes with a built-in "Dev Mode" layout that lets you manually simulate usage thresholds (0% to 100%) to see how the UI reacts. Run `npm run dev` to see the web UI, or `npm run tauri dev` to test the full Windows tray integration.
 
 ## Architecture
 
-BarLLM follows a strict **Provider-based Architecture**. 
+TokenGauge follows a strict **Provider-based Architecture**. 
 The React frontend is fully decoupled from the usage data sources. All providers (e.g., `ClaudeProvider`) must implement the `Provider` interface and return a normalized `UsageSnapshot`.
 
 ```typescript

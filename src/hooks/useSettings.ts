@@ -8,7 +8,7 @@ interface Settings {
   language: Language;
 }
 
-const STORAGE_KEY = "barllm-settings";
+const STORAGE_KEY = "tokengauge-settings";
 const DEFAULT_SETTINGS: Settings = { theme: "dark", language: "en" };
 
 function readSettings(): Settings {
@@ -35,7 +35,7 @@ function applyTheme(theme: Theme) {
 
 /**
  * Theme + language, persisted to localStorage and synced live across
- * BarLLM's separate hover/click windows via the native `storage` event
+ * TokenGauge's separate hover/click windows via the native `storage` event
  * (fires in other same-origin windows automatically — no IPC needed).
  */
 export function useSettings() {

@@ -76,7 +76,7 @@ export function ClickPanel({
               fontFamily: "'Courier New', Courier, monospace"
             }}
           >
-            BAR<span style={{ color: "var(--color-accent)" }}>_</span>LLM
+            TOKEN<span style={{ color: "var(--color-accent)" }}>_</span>GAUGE
           </span>
         </div>
         <div className="flex items-center gap-2 shrink-0">
@@ -214,7 +214,7 @@ export function ClickPanel({
                     : t(language, "upToDateBody");
 
               if (result.status === "available") {
-                openUrl(`https://github.com/Martinnezsavemaiwai/BarLLM/releases/latest`);
+                openUrl(`https://github.com/Martinnezsavemaiwai/TokenGauge/releases/latest`);
               }
 
               let permissionGranted = await isPermissionGranted();
@@ -223,7 +223,7 @@ export function ClickPanel({
                 permissionGranted = permission === 'granted';
               }
               if (permissionGranted) {
-                sendNotification({ title: 'BarLLM', body });
+                sendNotification({ title: 'TokenGauge', body });
               }
             }}
           />

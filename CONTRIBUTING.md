@@ -1,10 +1,10 @@
-# Contributing to BarLLM
+# Contributing to TokenGauge
 
-Thank you for your interest in contributing to BarLLM! 
+Thank you for your interest in contributing to TokenGauge! 
 
 ## Adding a New Provider
 
-BarLLM is designed to be extensible. To add a new AI coding assistant provider:
+TokenGauge is designed to be extensible. To add a new AI coding assistant provider:
 
 1. Create a new class implementing the `Provider` interface in `src/providers/your-provider.ts`.
 2. Do **not** put API logic in the React UI components. All parsing, fetching, and normalizing must happen inside your provider class.

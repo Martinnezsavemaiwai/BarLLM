@@ -1,6 +1,6 @@
 import { getVersion } from "@tauri-apps/api/app";
 
-const REPO = "Martinnezsavemaiwai/BarLLM";
+const REPO = "Martinnezsavemaiwai/TokenGauge";
 
 export type UpdateCheckResult =
   | { status: "up-to-date" }

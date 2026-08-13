@@ -263,7 +263,7 @@ pub fn run() {
         .setup(|app| {
             let _tray = TrayIconBuilder::with_id("main")
                 .icon(app.default_window_icon().unwrap().clone())
-                .tooltip("BarLLM")
+                .tooltip("TokenGauge")
                 .on_tray_icon_event(|tray, event| {
                     let app = tray.app_handle();
                     let hover = app.get_webview_window("hover").unwrap();

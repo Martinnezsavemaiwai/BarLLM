@@ -11,7 +11,7 @@ import "./styles/index.css";
 import { invoke } from "@tauri-apps/api/core";
 
 /**
- * BarLLM — Main application.
+ * TokenGauge — Main application.
  *
  * In production, the Rust side controls which view is visible
  * by loading `/?view=hover` or `/?view=click`.
