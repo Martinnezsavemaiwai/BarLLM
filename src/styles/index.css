@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/*
+ * BarLLM Design Tokens — Claude-warm dark palette
+ * Windows System Tray Companion for AI Coding Assistants
+ *
+ * Two themes, one token set. Default (no [data-theme] attr) = dark,
+ * so existing markup keeps working without a theme provider mounted yet.
+ */
+
+@theme {
+  --color-bg-base: #121212;
+  --color-bg-surface: #1A1A1A;
+  --color-bg-elevated: #252525;
+  --color-bg-taskbar: #1E1E1E;
+
+  --color-text-primary: #F0E6D3;
+  --color-text-secondary: #A89882;
+  --color-text-muted: #6B5E50;
+
+  --color-status-good: #D4845A;
+  --color-status-warning: #E07B3A;
+  --color-status-critical: #D94432;
+  --color-status-disabled: #666666;
+
+  --color-accent: #D4845A;
+  --color-accent-hover: #E07B3A;
+
+  --color-border: #333333;
+  --color-border-subtle: #2A2A2A;
+
+  --color-ring-track: #2A2A2A;
+}
+
+/* Light theme — same Claude-orange accent, inverted surfaces */
+:root[data-theme="light"] {
+  --color-bg-base: #F5F2ED;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-elevated: #F0EBE3;
+  --color-bg-taskbar: #FAF8F4;
+
+  --color-text-primary: #2B2420;
+  --color-text-secondary: #6B5E50;
+  --color-text-muted: #A89882;
+
+  --color-status-good: #C06B3E;
+  --color-status-warning: #C4671F;
+  --color-status-critical: #C23A26;
+  --color-status-disabled: #999999;
+
+  --color-accent: #C06B3E;
+  --color-accent-hover: #A85A31;
+
+  --color-border: #E0D8CC;
+  --color-border-subtle: #EBE4DA;
+
+  --color-ring-track: #EBE4DA;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Root font-size drives every rem value below, so Windows text-scale
+     (125/150/200%) reflows the layout instead of clipping it. */
+  font-size: 16px;
+}
+
+html, body, #root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 0.75rem;
+  font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+/* Prevent text selection and drag in the native-feeling panels */
+body {
+  -webkit-user-drag: none;
+}
+
+/* Panel container — shared between hover and click panels */
+.panel {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+  max-height: 100vh;
+}
+
+/* Scrollable region inside a panel — appears only when scaled content overflows the fixed Tauri window */
+.panel-scroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.panel-scroll::-webkit-scrollbar { width: 6px; }
+.panel-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
