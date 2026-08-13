@@ -2,6 +2,8 @@
 
 ![BarLLM Logo](src-tauri/icons/icon.png)
 
+[![CI](https://github.com/Martinnezsavemaiwai/BarLLM/actions/workflows/ci.yml/badge.svg)](https://github.com/Martinnezsavemaiwai/BarLLM/actions/workflows/ci.yml)
+
 > Windows Taskbar Companion for AI Coding Assistants. Your AI coding usage, always one glance away.
 
 BarLLM is a native-feeling Windows 11 system tray companion designed to help you monitor your usage for AI coding assistants (e.g. Claude Code, Codex, Aider) directly from the taskbar, without opening settings or web dashboards.
@@ -17,7 +19,11 @@ BarLLM is a native-feeling Windows 11 system tray companion designed to help you
 
 ## Installation
 
-You can build and run BarLLM from source using Tauri.
+Download the latest installer from the [Releases](https://github.com/Martinnezsavemaiwai/BarLLM/releases) page, or build from source below.
+
+> The installer isn't code-signed yet, so Windows SmartScreen may warn on first run ("Windows protected your PC" → More info → Run anyway).
+
+### Build from source
 
 ### Prerequisites
 - Node.js (v18+)

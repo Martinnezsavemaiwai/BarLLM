@@ -12,6 +12,7 @@ import { NavMenu } from "./NavMenu";
 import { RefreshIndicator } from "./RefreshIndicator";
 import { SettingsPanel } from "./SettingsPanel";
 import { formatTimeUntil } from "../lib/format";
+import { checkForUpdate } from "../lib/updates";
 import { useSettings } from "../hooks/useSettings";
 import { t } from "../lib/i18n";
 
@@ -204,13 +205,25 @@ export function ClickPanel({
             onOpenClaude={() => openUrl("https://console.anthropic.com/settings/limits")}
             onSettings={() => setShowSettings((prev) => !prev)}
             onUpdate={async () => {
+              const result = await checkForUpdate();
+              const body =
+                result.status === "available"
+                  ? t(language, "updateAvailableBody").replace("{version}", result.latestVersion)
+                  : result.status === "error"
+                    ? t(language, "updateCheckErrorBody")
+                    : t(language, "upToDateBody");
+
+              if (result.status === "available") {
+                openUrl(`https://github.com/Martinnezsavemaiwai/BarLLM/releases/latest`);
+              }
+
               let permissionGranted = await isPermissionGranted();
               if (!permissionGranted) {
                 const permission = await requestPermission();
                 permissionGranted = permission === 'granted';
               }
               if (permissionGranted) {
-                sendNotification({ title: 'BarLLM', body: t(language, "upToDateBody") });
+                sendNotification({ title: 'BarLLM', body });
               }
             }}
           />
